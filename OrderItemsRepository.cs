@@ -103,7 +103,7 @@ class OrderItemsRepository
         connection.Close();
     }
 
-    public bool ExitsById(int id)
+    public bool ExistById(int id)
     {
         var connection = new SqliteConnection(DatabaseConfig.ConnectionString);
         connection.Open();
