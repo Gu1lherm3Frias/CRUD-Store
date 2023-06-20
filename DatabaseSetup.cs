@@ -106,7 +106,7 @@ class DatabaseSetup
                     seller_id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL,
                     fixed_income DECIMAL(10,5) NOT NULL,
-                    commision_rank TEXT NOT NULL
+                    commission_rank TEXT NOT NULL
                 )
             ";
             command.ExecuteNonQuery();

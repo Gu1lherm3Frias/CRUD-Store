@@ -1,12 +1,12 @@
-namespace DBLesson.Models;
+namespace Store.Models;
 
 class OrderItems {
-    int ItemId {set; get;}
-    int OrderId {set; get;}
-    int ProductId {set; get;}
-    int Amount {set; get;}
+    public int ItemId {set; get;}
+    public int OrderId {set; get;}
+    public int ProductId {set; get;}
+    public int Amount {set; get;}
 
-    OrderItems(int itemId, int orderId, int productId, int amount) {
+    public OrderItems(int itemId, int orderId, int productId, int amount) {
         ItemId = itemId;
         OrderId = orderId;
         ProductId = productId;

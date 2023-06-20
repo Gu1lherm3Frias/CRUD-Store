@@ -39,14 +39,14 @@ class CustomerRepository {
         connection.Open();
 
         var command = connection.CreateCommand();
-        command.CommandText = "INSERT INTO customers VALUES($id, $name $address, $city, $zipcode, $uf, $ie)";
-        command.Parameters.AddWithValue("$id", customer.Id);
+        command.CommandText = "INSERT INTO customers VALUES($customer_id, $name $address, $city, $zip_code, $customer_uf, $customer_ie)";
+        command.Parameters.AddWithValue("$customer_id", customer.Id);
         command.Parameters.AddWithValue("$name", customer.Name);
         command.Parameters.AddWithValue("$address", customer.Address);
         command.Parameters.AddWithValue("$city", customer.City);
-        command.Parameters.AddWithValue("$zipcode", customer.ZipCode);
-        command.Parameters.AddWithValue("$uf", customer.UF);
-        command.Parameters.AddWithValue("$ie", customer.IE);
+        command.Parameters.AddWithValue("$zip_code", customer.ZipCode);
+        command.Parameters.AddWithValue("$customer_uf", customer.UF);
+        command.Parameters.AddWithValue("$customer_ie", customer.IE);
 
         command.ExecuteNonQuery();
         connection.Close();
@@ -59,8 +59,8 @@ class CustomerRepository {
         connection.Open();
 
         var command = connection.CreateCommand();
-        command.CommandText = "SELECT * FROM customers WHERE (id = $id)";
-        command.Parameters.AddWithValue("$id", id);
+        command.CommandText = "SELECT * FROM customers WHERE (customer_id = $customer_id)";
+        command.Parameters.AddWithValue("$customer_id", id);
 
         var reader = command.ExecuteReader();
         reader.Read();
@@ -76,15 +76,15 @@ class CustomerRepository {
         connection.Open();
 
         var command = connection.CreateCommand();
-        command.CommandText = "INSERT INTO customers VALUES ($id, $name, $address, $city, $region, $zipcode, $uf, $ie)";
-        command.CommandText = "UPDATE customers SET name = $name, address = $address, city = $city, zipcode = $zipcode, uf = $uf, ie = $ie WHERE (id = $id)";
+        command.CommandText = "INSERT INTO customers VALUES ($customer_id, $name, $address, $city, $zip_code, $customer_uf, $customer_ie)";
+        command.CommandText = "UPDATE customers SET name = $name, address = $address, city = $city, zip_code = $zip_code, uf = $customer_uf, ie = $customer_ie WHERE (customer_id = $id)";
         command.Parameters.AddWithValue("$id", customer.Id);
         command.Parameters.AddWithValue("$name", customer.Name);
         command.Parameters.AddWithValue("$address", customer.Address);
         command.Parameters.AddWithValue("$city", customer.City);
-        command.Parameters.AddWithValue("$zipcode", customer.ZipCode);
-        command.Parameters.AddWithValue("$uf", customer.UF);
-        command.Parameters.AddWithValue("$ie", customer.IE);
+        command.Parameters.AddWithValue("$zip_code", customer.ZipCode);
+        command.Parameters.AddWithValue("$customer_uf", customer.UF);
+        command.Parameters.AddWithValue("$customer_ie", customer.IE);
 
         command.ExecuteNonQuery();
         connection.Close();
@@ -97,7 +97,7 @@ class CustomerRepository {
         connection.Open();
 
         var command = connection.CreateCommand();
-        command.CommandText = "DELETE FROM customers WHERE (id = $id)";
+        command.CommandText = "DELETE FROM customers WHERE (customer_id = $customer_id)";
         command.Parameters.AddWithValue("$id", id);
 
         command.ExecuteNonQuery();
@@ -109,8 +109,8 @@ class CustomerRepository {
         connection.Open();
 
         var command = connection.CreateCommand();
-        command.CommandText = "SELECT count(id) FROM customers WHERE (id = $id)";
-        command.Parameters.AddWithValue("$id", id);
+        command.CommandText = "SELECT count(id) FROM customers WHERE (customer_id = $customer_id)";
+        command.Parameters.AddWithValue("$customer_id", id);
 
         var reader = command.ExecuteReader();
         reader.Read();

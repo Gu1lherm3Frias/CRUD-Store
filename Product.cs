@@ -1,11 +1,11 @@
-namespace DBlesson.Models;
+namespace Store.Models;
 
 class Product {
-    int ProductId {set; get;}
-    string Description {set; get;}
-    decimal UnitPrice {set; get;}
+    public int ProductId {set; get;}
+    public string Description {set; get;}
+    public decimal UnitPrice {set; get;}
 
-    Product(int productId, string description, decimal unitPrice) {
+    public Product(int productId, string description, decimal unitPrice) {
         ProductId = productId;
         Description = description;
         UnitPrice = unitPrice;
